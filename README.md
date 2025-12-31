@@ -2,9 +2,9 @@
 Big Data practice - Spark, Scala, SQL, Spark Streaming
 
 ## setps to run a Scala object
-scala 'Scala-File-Name'
-scalac 'Scala-File-Name'
-scala 'Scala-Object-Name-Having-The-Main-Method'
+scalac -classpath "%SPARK_HOME%\jars\*" MyApp.scala
+jar cf MyApp.jar MyApp*.class
+spark-submit --class MyApp MyApp.jar
 
 ## python venv
 cd c:\myWork\bigdata
@@ -19,10 +19,10 @@ Scala: https://www.scala-lang.org/download/2.12.18.html
 Hadoop: https://github.com/cdarlint/winutils/tree/master/hadoop-3.3.6/bin
 
 ## setps to run a Python file
-python Python-File-Name Arg1 Arg2
+python MyApp.py Arg1 Arg2
 
 ## setps to run a file that has spark submit
- spark-submit Python-File-Name
+spark-submit MyApp.py
 
 
 ## versions of Java, Python, ScALA AND PySpark:

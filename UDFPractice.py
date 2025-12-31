@@ -13,13 +13,14 @@ Requirements:
 
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder() \
-  .appName("SparkUDF") \
-  .master("local[*]") \
-  .getOrCreate()
+spark = SparkSession.builder \
+    .appName("SparkUDF") \
+    .master("local[2]") \
+    .getOrCreate()
 
 columns = ["Seqno", "Name"]
 data = [("1", "Apurva Sinha1"), ("2", "Apurva Sinha2")]
+
 
 df = spark.createDataFrame(data, columns)
 df.show(truncate=False)
